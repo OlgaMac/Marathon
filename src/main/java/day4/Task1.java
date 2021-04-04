@@ -1,5 +1,6 @@
 package day4;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,13 +11,17 @@ public class Task1 {
         int size = scanner.nextInt();
         int[] arr = new int[size];
         int count = 0;
+        int count1 = 0;
+        int counter = 0;
         int plus = 0;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(10);
         }
         for (Integer s : arr) {
-            System.out.print(s + " ");
+            plus = plus + s;
         }
+        System.out.print(Arrays.toString(arr));
+        System.out.println("\nСумма всех элементов массива: " + plus);
         System.out.println("\nДлина массива: " + arr.length);
         for (Integer c : arr) {
             if (c > 8) {
@@ -32,22 +37,23 @@ public class Task1 {
         System.out.println("Количество чисел равных 1: " + count);
         for (Integer c : arr) {
             if (c % 2 == 0) {
-                count++;
+                count1++;
+            } else {
+                counter++;
             }
         }
-        System.out.println("Количество четных чисел: " + count);
-        for (Integer c : arr) {
-            if (c % 2 != 0) {
-                count++;
-            }
+        System.out.println("Количество четных чисел: " + count1);
+        System.out.println("Количество нечетных чисел: " + counter);
+            //System.out.println("Количество четных чисел: " + count);
+            //for (Integer c : arr) {
+            //    if (c % 2 != 0) {
+            //       count++;
+            //   }
+            //}
+            //System.out.println("Количество нечетных чисел: " + count);
         }
-        System.out.println("Количество нечетных чисел: " + count);
-        for (Integer c : arr) {
-            plus = plus + c;
-        }
-        System.out.println("Сумма всех элементов массива: " + plus);
     }
-}
+
 
 
 
