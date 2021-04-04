@@ -39,10 +39,6 @@ public class Airplane {
     }
 
     public void info() {
-        this.producer = producer;
-        this.year = year;
-        this.length = length;
-        this.weight = weight;
         System.out.println("Изготовитель: " + producer +
                 "\nгод выпуска: " + year +
                 "\nдлина: (в метрах) " + length + "\nвес: (в тоннах) " + weight + "\nколичество топлива в баке: " + fuel);
