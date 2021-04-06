@@ -8,5 +8,17 @@ public class Task1 {
             sb.append(i + " ");
         }
         System.out.print(sb);
+        System.out.println();
+        System.out.println(System.currentTimeMillis());
+
+
+        String simpleString = new String();
+        for (int i = 1; i < size; i++) {
+            simpleString += i + " ";
+        }
+
+        System.out.print(simpleString);
+        System.out.println();
+        System.out.println(System.currentTimeMillis());
     }
 }
