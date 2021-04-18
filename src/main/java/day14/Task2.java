@@ -22,31 +22,20 @@ public class Task2 {
                     break;
                 }
                 String[] cells = line.split(" ");
-
-                People p = new People();
-                p.name = cells[0];
-                p.age = Integer.parseInt(cells[1]);
-                if(p.age < 0){
+                if(Integer.parseInt(cells[1]) < 0) {
                     throw new IllegalAccessException();
                 }
+
+                People p = new People(cells[0],Integer.parseInt(cells[1]));
                 people.add(p);
             }
             System.out.println(people);
+            return people;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
         } catch (IllegalAccessException e) {
             System.out.println("Некорректный входной файл");
         }
-        return people;
-    }
-
-    public static class People {
-        String name;
-        int age;
-
-        @Override
-        public String toString() {
-            return name + " " + age;
-        }
+        return null;
     }
 }
