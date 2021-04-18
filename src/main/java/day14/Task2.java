@@ -30,6 +30,7 @@ public class Task2 {
                 people.add(p);
             }
             System.out.println(people);
+            scanner.close();
             return people;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");

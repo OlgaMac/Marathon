@@ -22,6 +22,7 @@ public class Task1 {
                 sum += Integer.parseInt(number);
 
             System.out.println(sum);
+            scanner.close();
             if (numbersString.length != 10) {
                 try {
                     throw new IOException();
