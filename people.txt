@@ -1,0 +1,8 @@
+Mike 5
+John 19
+Anna 20
+Miguel 5
+Ann 27
+Fill 30
+Ben 15
+Egor 21
