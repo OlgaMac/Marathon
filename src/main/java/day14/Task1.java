@@ -18,20 +18,18 @@ public class Task1 {
 
             String line = scanner.nextLine();
             String[] numbersString = line.split(" ");
+            if (numbersString.length != 10) {
+                throw new IOException();
+            }
             for (String number : numbersString)
                 sum += Integer.parseInt(number);
 
             System.out.println(sum);
             scanner.close();
-            if (numbersString.length != 10) {
-                try {
-                    throw new IOException();
-                } catch (IOException e) {
-                    System.out.println("Некорректный входной файл");
-                }
-            }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IOException e) {
+            System.out.println("Некорректный входной файл");
         }
     }
 }
