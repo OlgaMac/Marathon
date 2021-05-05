@@ -14,7 +14,7 @@ import java.util.*;
 public class Task3 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/taxi_cars.txt"));
-        HashMap<Integer, Point> cars = new HashMap<>();
+        Map<Integer, Point> cars = new HashMap<>();
         while (true) {
             String line = reader.readLine();
             if (line == null) {
@@ -39,40 +39,22 @@ public class Task3 {
         System.out.println("y2 = ");
         int y2 = scanner.nextInt();
 
-        /*List<Point> point = new ArrayList<>();
-        for (int i = x1, j = y1; i <= x2 && j <= y2; i++, j++){
-            point.add(new Point(i, j));
-        }
-        System.out.println(point);*/
-
+        int[] points = {x1, y1, x2, y2};
 
         for (Map.Entry<Integer, Point> entry : cars.entrySet()) {
-            for (int i = x1, j = y1; i <= x2 && j <= y2; i++, j++) {
-                Point point = new Point(i, j);
-                if (entry.getValue().equals(point)) {
-                    System.out.println(entry);
-                }
-            }
-
-            for (int i = x1, j = y1; i >= x2 && j >= y2; i--, j--) {
-                Point point = new Point(i, j);
-                if (entry.getValue().equals(point)) {
-                    System.out.println(entry);
-                }
-            }
-            for (int i = x1, j = y1; i <= x2 && j >= y2; i++, j--) {
-                Point point = new Point(i, j);
-                if (entry.getValue().equals(point)) {
-                    System.out.println(entry);
-                }
-            }
-            for (int i = x1, j = y1; i >= x2 && j <= y2; i--, j++) {
-                Point point = new Point(i, j);
-                if (entry.getValue().equals(point)) {
-                    System.out.println(entry);
-                }
+            if(isInside(entry, points) == true){
+                System.out.println(entry);
             }
         }
     }
+
+    private static boolean isInside(Map.Entry<Integer, Point> taxiCar, int[] square) {
+        int taxiX = taxiCar.getValue().getX();
+        int taxiY = taxiCar.getValue().getY();
+
+        return taxiX > square[0] && taxiX < square[2] && taxiY > square[1] && taxiY < square[3];
+    }
 }
+
+
 
