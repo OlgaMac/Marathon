@@ -52,7 +52,8 @@ public class Task3 {
         int taxiX = taxiCar.getValue().getX();
         int taxiY = taxiCar.getValue().getY();
 
-        return taxiX > square[0] && taxiX < square[2] && taxiY > square[1] && taxiY < square[3];
+        return (taxiX > square[0] && taxiX < square[2]|| taxiX < square[0] && taxiX > square[2])&&
+                (taxiY < square[1] && taxiY > square[3]||taxiY > square[1] && taxiY < square[3]);
     }
 }
 
